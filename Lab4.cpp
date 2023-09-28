@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <clocale>
 using namespace std;
-
 /**
  * 12. Дан набор ненулевых целых чисел; признак его завершения - число 0.
  * Вывести сумму всех положительных четных чисел из данного набора.
@@ -13,13 +12,12 @@ void solution1() {
     while (true) {
         cin >> UserNumber;
         if (UserNumber == 0) { break; }
-        if ((UserNumber % 2) == 0)    {
+        if ((UserNumber % 2) == 0) {
             SummOfChet += UserNumber; 
         }
     }
     cout << "Ваша сумма чисел:" << SummOfChet << "\n";
 }
-
 /**
  * @brief 12. Дано целое число N (> 0). Найти произведение 1.1 * 1.2 * 1.3 * ... (N сомножителей).
 */
@@ -39,7 +37,6 @@ int solution2() {
     cout << AllProiz << "\n";
     return 0;
 }
-
 /**
  * @brief Лр 4. Циклический вычислительный процесс
  * по заданиям
@@ -47,5 +44,15 @@ int solution2() {
 int main()
 {   
     setlocale(LC_ALL, "ru");
-    return solution2();
+    int UserChoise;
+    while (true) {
+        cout << "Здравствуйте, напишите номер подпрограммы, в которую хотите попасть\n(1, 2, а для выхода введите -1)\n";
+        cin >> UserChoise;
+        if (UserChoise == 1) { solution1(); }
+        else if (UserChoise == 2) { cout << solution2(); }
+        else if (UserChoise == -1) { break; }
+        else { cout << "Неправильная цифра!"; };
+        cout << "\n";
+    }
+    return 0;
 }
